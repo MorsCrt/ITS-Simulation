@@ -3,6 +3,7 @@ from typing import List
 import libsumo
 from ontology_manager import OntologyManager
 
+# TODO: Street and Vehicle shares same emissions split with inheritance
 @dataclass
 class Street:
     id: str
