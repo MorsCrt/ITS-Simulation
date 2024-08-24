@@ -10,6 +10,9 @@ class OntologyManager:
         JAVA_EXE = java_path
         self.onto = get_ontology(ontology_path).load()
 
+    # TODO: Rewrite exception for handling both ontology class check and class_name conversion
+    # Sometimes class not found in ontology, sometimes class_name not properly converted for matching ontology class
+    # Look further normalize_class_name
     def find_class(self, class_name):
         """
         Find and return a class from the ontology by name.
@@ -48,6 +51,7 @@ class OntologyManager:
 
         return normalized_name
 
+    # HACK
     def create_instance(self, class_name, instance_id, data):
         """
         Create an instance of a class in the ontology and populate it with data.
